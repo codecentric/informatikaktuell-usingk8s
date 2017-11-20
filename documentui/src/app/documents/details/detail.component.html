@@ -1,0 +1,7 @@
+<div *ngIf="documentData" class="document-data">
+  <div class="title">{{documentData.title}}</div>
+  <div class="content">{{documentData.content}}</div>
+</div>
+<div *ngIf="!documentData">
+  Dokument aus der Liste auswählen!
+</div>

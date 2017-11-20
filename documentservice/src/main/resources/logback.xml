@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <include resource="org/springframework/boot/logging/logback/base.xml"/>
+
+    <logger name="de.codecentric" level="DEBUG"/>
+
+    <logger name="org.elasticsearch" level="warn"/>
+
+    <logger name="org.springframework.web.client.RestTemplate" level="INFO"/>
+    <logger name="org.springframework.data.elasticsearch" level="ALL"/>
+    <!--<logger name="org.springframework.beans" level="DEBUG" />-->
+
+    <root level="INFO"/>
+
+</configuration>

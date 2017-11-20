@@ -1,0 +1,9 @@
+
+.document-data .title {
+  font-size: 150%;
+  font-weight: bold;
+}
+
+.document-data .content {
+  white-space: pre-wrap;
+}

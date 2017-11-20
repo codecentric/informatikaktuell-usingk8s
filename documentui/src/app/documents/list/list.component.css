@@ -1,0 +1,15 @@
+.document-data {
+  margin-top: 1rem;
+  border-bottom: 1px solid gray;
+  padding-bottom: 1rem;
+}
+
+.document-data .title {
+  font-size: larger;
+  font-weight: bold;
+}
+
+.document-data a {
+  text-decoration: none;
+  color: black;
+}

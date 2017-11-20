@@ -1,0 +1,59 @@
+kind: Deployment
+apiVersion: apps/v1beta2
+
+metadata:
+  name: elasticsearch
+
+spec:
+  replicas: 2
+
+  selector:
+    matchLabels:
+      app: elasticsearch
+  template:
+    metadata:
+      labels:
+        app: elasticsearch
+
+    spec:
+      initContainers:
+        - name: sysctl-vm
+          image: busybox
+          command: ["sysctl", "-w", "vm.max_map_count=262144"]
+          securityContext:
+            privileged: true
+
+      containers:
+        - name: elasticsearch
+          image: docker.elastic.co/elasticsearch/elasticsearch:5.6.3
+
+          env:
+            - name: cluster.name
+              value: "es-cluster"
+            - name: ES_JAVA_OPTS
+              value: "-Xms300m -Xmx300m"
+            - name: discovery.zen.ping.unicast.hosts
+              value: "elasticsearch"
+            - name: xpack.security.enabled
+              value: "false"
+
+          ports:
+            - name: cluster
+              containerPort: 9300
+              protocol: TCP
+
+          resources:
+            limits:
+              memory: 350Mi
+              cpu: 0.4
+            requests:
+              memory: 250Mi
+              cpu: 0.2
+
+          volumeMounts:
+            - name: storage
+              mountPath: /usr/share/elasticsearch/data
+      volumes:
+        - name: storage
+          emptyDir: {}
+

@@ -1,0 +1,15 @@
+<div>
+  <form>
+    <div class="form-group">
+      <label for="title">Titel</label>
+      <input class="form-control" type="text" id="title"
+             [(ngModel)]="documentData.title" name="title">
+    </div>
+    <div class="form-group">
+      <label for="content">Inhalt</label>
+      <textarea class="form-control" rows="10" id="content"
+                [(ngModel)]="documentData.content" name="content"></textarea>
+    </div>
+    <button class="btn btn-primary" (click)="onAddDocument()">Hinzufügen</button>
+  </form>
+</div>

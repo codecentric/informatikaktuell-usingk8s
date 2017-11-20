@@ -1,0 +1,9 @@
+{
+  "name": "documentui",
+  "version": "1.0.0",
+  "dependencies": {
+    "express": "^4.16.2",
+    "express-request-proxy": "^2.0.0",
+    "morgan": "^1.9.0"
+  }
+}

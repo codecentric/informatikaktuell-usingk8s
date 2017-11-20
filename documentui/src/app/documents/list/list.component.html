@@ -1,0 +1,15 @@
+<div>
+  <div class="input-group">
+    <span class="input-group-addon">Filter: </span>
+    <input class="form-control" type="text" [formControl]="filter"/>
+  </div>
+
+  <div *ngFor="let doc of documentDatas">
+    <div class="document-data">
+      <a [routerLink]="['/detail', doc.id]">
+        <div class="title">{{doc.title}}</div>
+        <div class="content">{{doc.content}}</div>
+      </a>
+    </div>
+  </div>
+</div>
