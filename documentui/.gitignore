@@ -42,3 +42,4 @@ testem.log
 Thumbs.db
 /docker/dist/
 /docker/package-lock.json
+documentui.iml
